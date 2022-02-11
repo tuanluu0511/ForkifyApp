@@ -6,6 +6,7 @@ import paginationView from './views/paginationView.js';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
+import { result } from 'lodash-es';
 
 if (module.hot) {
   module.hot.accept();
@@ -18,6 +19,8 @@ const controlRecipe = async function () {
 
     recipeView.renderSpinner();
 
+    // 0) Update result view to mark selected search result
+    resultsView.update(model.getSearchResultPage());
     // 1)Loading recipe
     await model.loadRecipe(id);
 
@@ -59,7 +62,8 @@ const controlServings = function (newServings) {
   // 1) Update serving in state
   model.updateServings(newServings);
   // 2) Render recipe with new serving
-  recipeView.render(model.state.recipe);
+  // recipeView.render(model.state.recipe);
+  recipeView.update(model.state.recipe);
 };
 
 const init = function () {
