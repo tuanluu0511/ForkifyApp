@@ -38,6 +38,7 @@ bower_components
 build/Release
 
 # Dependency directories
+dist/
 node_modules/
 jspm_packages/
 .parcel-cache/
@@ -103,5 +104,3 @@ typings/
 # TernJS port file
 .tern-port
 
-#parcel files
-dist/
