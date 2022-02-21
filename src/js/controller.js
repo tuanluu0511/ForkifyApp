@@ -9,7 +9,7 @@ import addRecipeView from './views/addRecipeView.js';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import { result } from 'lodash-es';
+
 
 if (module.hot) {
   module.hot.accept();
