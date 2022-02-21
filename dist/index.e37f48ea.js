@@ -2971,7 +2971,15 @@ var _iconsSvg = require("url:../../img/icons.svg");
 var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 class View {
     _data;
-    render(data, render = true) {
+    /**
+   *
+   * @param {Object|Object[]} data The data to be render (e.g. recipe)
+   * @param {boolean} [render=true] If false, create markup string instead of render the DOM
+   * @returns {undefined|string} A markup string is returned if render=false
+   * @this {Object} View instance
+   * @author Tuan Luu
+   * @todo Finish implementation
+   */ render(data, render = true) {
         if (!data || Array.isArray(data) && data.length === 0) return this.renderError();
         this._data = data;
         const markup = this._generateMarkup();
